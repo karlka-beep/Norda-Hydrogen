@@ -1,0 +1,34 @@
+{
+  "name": "Norda Hydrogen Dev",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/common-utils:2": { "username": "node" }
+  },
+  "forwardPorts": [3000, 8002],
+  "portsAttributes": {
+    "3000": { "label": "Hydrogen Dev Server", "onAutoForward": "openBrowser" },
+    "8002": { "label": "Hydrogen GraphiQL", "onAutoForward": "notify" }
+  },
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "graphql.vscode-graphql",
+        "graphql.vscode-graphql-syntax",
+        "EditorConfig.EditorConfig"
+      ],
+      "settings": {
+        "files.eol": "\n",
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.formatOnSave": true,
+        "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+        "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" }
+      }
+    }
+  },
+  "remoteUser": "node"
+}
